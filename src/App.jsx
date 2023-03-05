@@ -120,7 +120,7 @@ function App() {
 
   const [TColorInps, setTColorInps] = useState([])
   const [BColorInps, setBColorInps] = useState([])
-  const [Ele, setEle] = useState({TDeg: "90",TColor: ["#ff3322","#55f555","#dd33ff"],BDeg: "180",BColor:["#ffff82","#4411ff","#dd3377"],Text: "Vai se fuder! ♥",Tam:"16", UniMed:"px", QuantTColors: 3, QuantBColors: 3})
+  const [Ele, setEle] = useState({TDeg: "90",TColor: ["#ff3322","#55f555","#dd33ff"],BDeg: "180",BColor:["#ffff82","#4411ff","#dd3377"],Text: "Vai se fuder! ♥",Tam:"48", UniMed:"px", QuantTColors: 3, QuantBColors: 3})
   const uniMedChoices = ['px', 'em', 'vh']
   
   // Mudar variáveis
@@ -259,7 +259,7 @@ function App() {
                   if(Ele.Text !== "Vai se fuder! ♥"){
                     list+=`Text=${Ele.Text}&`
                   }
-                  if(Ele.Tam !== "16"){
+                  if(Ele.Tam !== "48"){
                     list+=`Tam=16&`
                   }
                   if(Ele.UniMed !== 'px'){
