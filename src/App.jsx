@@ -11,6 +11,7 @@ const CSSReset = createGlobalStyle`
 `
 
 const Mod = styled.div`
+
   input[type=checkbox] {
     position: absolute;
     top: -9999px;
@@ -36,8 +37,6 @@ const Mod = styled.div`
     }    
   }
 
-
-
   div.modf {
     text-align: center;
     left: 0; right: 0;
@@ -60,10 +59,12 @@ const Mod = styled.div`
 
     background-color: rgba(250, 250, 250, 0.5);
 
+    border-radius: 20px;
     margin-left: auto;
     margin-right: auto;
     top: 36%;
     height: 40%;
+    max-width: 100%;
     width: 400px;
   }
 
@@ -88,7 +89,7 @@ const Mod = styled.div`
 
 const RGB = styled.div`
 
-    min-width: 380px;
+    width: 100%;
     height: 100vh; 
     
     background-image: ${({theme}) => {
@@ -98,6 +99,25 @@ const RGB = styled.div`
     display: flex;
 
     align-items: center;
+
+    input {
+      background-color: #d1bff2f1;
+      border-width: 1px;
+      border-radius: 20px;
+      margin-top: 4px;
+    }
+
+    select {
+      background-color: #d1bff2f1;
+      border-width: 1px;
+      border-radius: 20px;
+    }
+
+    button {
+      background-color: #d1bff2f1;
+      border-width: 1px;
+      border-radius: 20px;
+    }
 
     .text{
       -webkit-text-fill-color: transparent;
@@ -122,7 +142,7 @@ function App() {
 
   const [TColorInps, setTColorInps] = useState([])
   const [BColorInps, setBColorInps] = useState([])
-  const [Ele, setEle] = useState({TDeg: "90",TColor: ["#ff3322","#55f555","#dd33ff"],BDeg: "180",BColor:["#ffff82","#4411ff","#dd3377"],Text: "Vai se fuder! ♥",Tam:"48", UniMed:"px", QuantTColors: 3, QuantBColors: 3})
+  const [Ele, setEle] = useState({TDeg: "90",TColor: ["#ff3322","#55f555","#dd33ff"],BDeg: "180",BColor:["#ffff82","#4411ff","#dd3377"],Text: "Bom dia! ♥",Tam:"48", UniMed:"px", QuantTColors: 3, QuantBColors: 3})
   const uniMedChoices = ['px', 'em', 'vh']
   
   // Mudar variáveis
@@ -257,7 +277,7 @@ function App() {
                     }
                     list+="&"
                   }
-                  if(Ele.Text !== "Vai se fuder! ♥"){
+                  if(Ele.Text !== "Bom dia! ♥"){
                     list+=`Text=${Ele.Text.replace(/ /gi, "%20")}&`
                   }
                   if(Ele.Tam !== "48"){
