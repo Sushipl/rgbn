@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react'
 import styled, { ThemeProvider ,  createGlobalStyle } from "styled-components";
 import copy from "copy-to-clipboard"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-export const CSSReset = createGlobalStyle`
+const CSSReset = createGlobalStyle`
   body{
     margin: 0 auto;
   }
@@ -137,7 +139,6 @@ function App() {
     var num = Number(e.target.name.substr(6, 7))
     var n = Ele[nvar]
     n[num] = value
-    console.log(Ele)
     setEle({...Ele, [nvar]: n})
   }
 
@@ -257,7 +258,7 @@ function App() {
                     list+="&"
                   }
                   if(Ele.Text !== "Vai se fuder! ♥"){
-                    list+=`Text=${Ele.Text}&`
+                    list+=`Text=${Ele.Text.replace(/ /gi, "%20")}&`
                   }
                   if(Ele.Tam !== "48"){
                     list+=`Tam=16&`
@@ -271,10 +272,20 @@ function App() {
                   if(Ele.QuantBColors !== 3){
                     list+=`QuantBColors=${Ele.QuantBColors}&`
                   }
-                  copy(`http://127.0.0.1:5173/${list}`)
+                  copy(`https://rgbn.vercel.app/${list}`)
+                  toast.success("Link da página modificada copiada para área de transferência")
                 }} type="button">Copiar</button>
               </div>
-
+              <ToastContainer
+                position="top-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                draggable
+                theme="colored"
+              />
             </div>
 
         </Mod>
